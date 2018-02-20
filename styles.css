@@ -1,0 +1,76 @@
+
+body{
+	font-family:Arial !important;
+	font-size: 14px;
+}
+h1{
+	font-family: 'ABeeZee', sans-serif;
+	font-size: 50px;
+	color:black;
+	text-align: center;
+}
+h2{
+	font-family: 'ABeeZee', sans-serif;
+	font-size: 40px;
+	color:black;
+	text-align: center;
+	text-transform: capitalize;
+	margin: 20px;
+}
+h3{
+	font-family: 'ABeeZee', sans-serif;
+	font-size: 30px;
+	color:black;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 15px;
+}
+
+.title-box{
+  width: 385px;
+  border: solid #e67e41 2px;
+  height: 385px;
+  position: absolute;
+  z-index: -10;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+.container{
+	width: 400px;
+	height: 400px;
+	padding:10px;
+}
+.header{
+	margin: 50px 10px 0 10px;
+}
+#content{
+    padding: 10px 40px 30px 40px;
+}
+
+#response{
+	padding-bottom: 20px;
+	transition: 0.5s ease;
+	font-size: 14px;
+	line-height: 16px
+	min-height:200px;
+}
+
+button{
+    background-color: white;
+    border: none;
+    border-bottom: #e67e41 solid 2px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-family: 'Pacifico', cursive;
+    transition: 0.3s ease;
+    margin-bottom: 20px;
+}
+button:focus {outline:0;}
+button:hover{
+	transition: 0.3s ease;
+    border-bottom: black solid 2px;
+}
