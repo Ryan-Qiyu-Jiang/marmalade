@@ -77,8 +77,9 @@ function helper(board, isMax, depth, acc, alpha, beta,max_level){
 	return best_move;
 
 }
+console.log(board);
 //progressive deepening
-for(let f=1;f<6;f++){
+for(let f=1;f<5;f++){
 	setTimeout(function(){
 	 current_best_move=helper(board,isMax,0, [],-9999999,9999999,f);
 	 console.log("Depth: "+f+" Current Best Move: ");

@@ -28,7 +28,7 @@ h3{
 
 .title-box{
   width: 385px;
-  border: solid #e67e41 2px;
+  border: solid #efa052 3px;
   height: 385px;
   position: absolute;
   z-index: -10;
@@ -60,7 +60,7 @@ h3{
 button{
     background-color: white;
     border: none;
-    border-bottom: #e67e41 solid 2px;
+    border-bottom: #efa052 solid 3px;
     padding-bottom: 10px;
     cursor: pointer;
     text-transform: capitalize;
@@ -72,5 +72,5 @@ button{
 button:focus {outline:0;}
 button:hover{
 	transition: 0.3s ease;
-    border-bottom: black solid 2px;
+    border-bottom: black solid 3px;
 }

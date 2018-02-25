@@ -120,6 +120,10 @@ Board.prototype={
 			return arr.slice(0);
 		});
 		this.piece_count=b.piece_count;
+		this.op_moved=b.op_moved.slice(0);
+		this.op_castled=b.op_castled;
+		this.you_moved=b.you_moved.slice(0);
+		this.you_castled=b.you_castled;
 	},
 	move:function(key,p){
 		let temp;
@@ -1032,35 +1036,36 @@ Board.prototype={
 	get_state: function(){
 
 		let state=this.piece_count;
-		let center_control=0;
-		for(let f=4;f<=5;f++){
-			for(let a=3;a<=6;a++){
-				const b=this.field[f][a];
-				if(b!=null){
-					if(b[0]=='*'){
-						center_control-=1;
-					}else{
-						center_control+=1;
-					}
-				}
-			}
-		}
+		// let center_control=0;
+		// for(let f=4;f<=5;f++){
+		// 	for(let a=3;a<=6;a++){
+		// 		const b=this.field[f][a];
+		// 		if(b!=null){
+		// 			if(b[0]=='*'){
+		// 				center_control-=1;
+		// 			}else{
+		// 				center_control+=1;
+		// 			}
+		// 		}
+		// 	}
+		// }
+		// state+=center_control;
 		for(let f=1;f<=8;f++){
 			for(let a=1;a<=8;a++){
 				const b=this.field[f][a];
 				if(b){
 					const k=(b[0]=='*')?b[1]:b[0];
+					const m=(b[0]=='*')?-1:1;
 					if(k=='p'){
-						state+=pawn_table[-1*f+9][a-1]/100;
+						state+=m*pawn_table[-1*f+8][a-1]/100;
 					}else if(k=='n'){
-						state+=knight_table[f-1][a-1]/100;
+						state+=m*knight_table[f-1][a-1]/100;
 					}else if(k=='b'){
-						state+=bishop_table[f-1][a-1]/100;
+						state+=m*bishop_table[f-1][a-1]/100;
 					}
 				}
 			}
 		}
-		state+=center_control;
 		if(this.is_max){
 			if(this.is_check('')){
 				state-=0.75;

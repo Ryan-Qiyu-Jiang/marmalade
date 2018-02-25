@@ -6,8 +6,9 @@ function nextMove(data){
 		board.init();
 		board.read(moves);
 		board.display();
+		const num_m=moves.length;
 		//do minMax
-		minMax(board,true);
+		minMax(board,(num_m%2==0));
 
 }
 
